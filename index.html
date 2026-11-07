@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f6f1">
+    <title>词间 · 你的单词收藏夹</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="词间首页"><span class="brand-mark" aria-hidden="true">词</span><span>词间<span class="brand-dot">.</span></span></a>
+        <span class="topbar-note">给每个新词，一个留下来的理由</span>
+      </header>
+      <main>
+        <section class="welcome">
+          <div class="welcome-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL VOCABULARY</p>
+            <h1>把遇见的词，<br><span>变成自己的。</span></h1>
+            <p class="welcome-description">收下今天学到的新词，慢慢积累，直到它们成为你的一部分。</p>
+          </div>
+          <div class="welcome-art" aria-hidden="true"><span class="art-sun"></span><span class="art-word art-word-one">serendipity</span><span class="art-word art-word-two">wander</span><span class="art-word art-word-three">词</span><span class="art-leaf"></span></div>
+        </section>
+        <section class="stats" aria-label="单词统计">
+          <div class="stat-card"><span class="stat-label">已经收藏</span><strong id="total-count" class="stat-value">0</strong><span class="stat-footnote">个值得记住的词</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-card"><span class="stat-label">最近加入</span><strong id="recent-word" class="stat-value stat-recent">还没有单词</strong><span class="stat-footnote">每一次记录，都是进步</span></div>
+          <div class="stats-decoration" aria-hidden="true">✳</div>
+        </section>
+        <section class="workspace" aria-label="管理单词">
+          <div class="section-heading"><div><p class="eyebrow">YOUR WORDS</p><h2>我的单词本<span id="list-count" class="heading-count">0</span></h2></div><label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="搜索单词或释义" autocomplete="off" aria-label="搜索单词或释义"><kbd>/</kbd></label></div>
+          <div class="word-list" id="word-list" aria-live="polite"></div>
+          <div class="empty-state" id="empty-state"><span class="empty-icon" aria-hidden="true">✳</span><h3 id="empty-title">你的单词本还是空的</h3><p id="empty-description">记下第一个新词，让这段学习旅程从这里开始。</p></div>
+        </section>
+        <section class="add-section" id="add-section">
+          <div class="add-intro"><span class="add-icon" aria-hidden="true">＋</span><div><p class="eyebrow">A NEW DISCOVERY</p><h2 id="form-title">收藏一个新词</h2><p>好记性不如随手记下来。</p></div></div>
+          <form id="word-form">
+            <label class="field"><span>单词</span><input id="word-input" name="word" type="text" maxlength="80" placeholder="例如：serendipity" required></label>
+            <label class="field"><span>释义</span><input id="meaning-input" name="meaning" type="text" maxlength="240" placeholder="例如：意外发现美好事物的能力" required></label>
+            <div class="form-actions"><button class="button button-quiet" id="cancel-edit" type="button" hidden>取消</button><button class="button button-primary" id="submit-button" type="submit"><span id="submit-label">收进单词本</span><span aria-hidden="true">↗</span></button></div>
+            <p class="form-message" id="form-message" role="status"></p>
+          </form>
+        </section>
+      </main>
+      <footer class="footer"><span>慢慢来，比较快。</span><span>你的单词只保存在这台设备上 <span aria-hidden="true">♡</span></span></footer>
+    </div>
+  </body>
+</html>
